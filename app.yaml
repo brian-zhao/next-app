@@ -1,0 +1,23 @@
+env: standard
+runtime: nodejs14
+service: default
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+
+
+# Solved the cold start problem with standard Environment
+#env: standard
+#runtime: nodejs14
+#instance_class: F4
+#service: team
+#inbound_services:
+#- warmup
+#automatic_scaling:
+#    min_idle_instances: 1
+#    min_instances: 1
+#handlers:
+#  - url: /.*
+#    secure: always
+#    script: auto
