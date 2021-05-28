@@ -15,10 +15,13 @@ export default function Header() {
         <Link href="http://market.brianzhao.xyz/">
           <a>ASX Market</a>
         </Link>
-        <Link href="/">
-          <a>Blog</a>
+        <Link href="/blog">
+          <a>Tech</a>
         </Link>
         <Link href="/">
+          <a>Tao Te Ching</a>
+        </Link>
+        <Link href="/about">
           <a>About</a>
         </Link>
       </div>

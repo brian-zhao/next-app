@@ -1,12 +1,11 @@
 import React from 'react'
-
-import { Post } from "../components/Post";
-import { daoArticles } from "../getAllPosts";
+import { Post } from "../../components/Post";
+import { blogPosts } from "../../getAllPosts";
 
 export default function IndexPage() {
   return (
     <>
-      {daoArticles.map((post) => (
+      {blogPosts.map((post) => (
         <Post key={post.link} post={post} />
       ))}
     </>

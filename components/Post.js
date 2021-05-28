@@ -4,13 +4,14 @@ import { HeadPost } from "./HeadPost";
 export const Post = ({ post }) => {
   const {
     link,
-    module: { meta }
+    module: { meta },
+    nav
   } = post;
 
   return (
     <article>
       <HeadPost meta={meta} />
-      <Link href={"/blog" + link}>
+      <Link href={"/" + nav + link}>
         <a>Read more &rarr;</a>
       </Link>
       <style jsx>
