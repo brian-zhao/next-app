@@ -2,7 +2,7 @@ import React from 'react'
 import { Post } from "../../components/Post";
 import { blogPosts } from "../../getAllPosts";
 
-export default function IndexPage() {
+export default function BlogPage() {
   return (
     <>
       {blogPosts.map((post) => (

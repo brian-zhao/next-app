@@ -4,9 +4,7 @@ export default function Header() {
   return (
     <nav>
       <h1>
-        <Link href="/">
-          <a>BZ</a>
-        </Link>
+        BZ
       </h1>
       <div>
         <Link href="http://learn.brianzhao.xyz/">

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function IndexPage() {
+export default function AboutPage() {
   return (
     <>
       <article>Hello from Australia!</article>
