@@ -1,12 +1,17 @@
 import BlogPost from '../../../components/BlogPost'
+import Image from 'next/image'
 
 export const meta = {
-  title: 'Blog',
-  description: 'Test Blog',
+  title: 'Google Cloud',
+  description: 'Google Cloud Useful Information',
   date: '26 May 2021',
   readTime: 2
 }
 
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
-## Hello World
+## Google Cloud Shared Responsibility Model
+
+<!-- ![Google Cloud Shared Responsibility Model](/img/shared_responsibility.png) -->
+
+<img src="/img/shared_responsibility.png" width="600" />
