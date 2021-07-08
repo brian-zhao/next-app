@@ -2,16 +2,16 @@ import BlogPost from '../../../components/BlogPost'
 import Image from 'next/image'
 
 export const meta = {
-  title: 'Google Cloud',
-  description: 'Google Cloud Useful Information',
-  date: '26 May 2021',
+  title: 'How to fix ssh too many authentication failures.',
+  description: 'Devops',
+  date: '6 July 2021',
   readTime: 2
 }
 
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
-## Google Cloud Shared Responsibility Model
+## Fix too many authentication failures ssh error
 
-<!-- ![Google Cloud Shared Responsibility Model](/img/shared_responsibility.png) -->
-
-<img src="/img/shared_responsibility.png" width="600" />
+* Increase the `MaxAuthTries` on the server (definitively an option, but I don’t recommend it)
+* Edit the `~/.ssh/config` (on the client) and add IdentitiesOnly blocks so that a connection to a specific host only tries the associated key
+* Force non-key authentication, e.g.: `ssh -o PubkeyAuthentication=no romain@hostname.com`
