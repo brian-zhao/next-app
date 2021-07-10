@@ -13,7 +13,7 @@ export default function Header() {
         <Link href="http://market.brianzhao.xyz/">
           <a>ASX Market</a>
         </Link>
-        <Link href="/blog">
+        <Link href="/tech">
           <a>Tech</a>
         </Link>
         <Link href="/">

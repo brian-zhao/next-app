@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "./Header";
+import Script from "next/script";
 
 export default function Layout({ children, pageTitle, description }) {
   return (
@@ -9,17 +10,13 @@ export default function Layout({ children, pageTitle, description }) {
         <meta charSet="utf-8" />
         <meta name="Description" content={description}></meta>
         <title>{pageTitle}</title>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3P9T2SJ1S"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-S3P9T2SJ1S');
-        </script>
         <script data-ad-client="ca-pub-4612414230756953" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>
+      <Script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S3P9T2SJ1S');` }} />
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap|Roboto:wght@400;700&display=swap");
         html,

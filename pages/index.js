@@ -5,7 +5,7 @@ import { daoArticles } from "../getAllPosts";
 
 
 daoArticles.sort(function(a, b) {
-  return b.index - a.index;
+  return a.index - b.index;
 })
 
 export default function IndexPage() {

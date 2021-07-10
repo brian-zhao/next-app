@@ -1,0 +1,48 @@
+import BlogPost from '../../../components/BlogPost'
+import Image from 'next/image'
+
+export const meta = {
+  title: 'Adding a Script to the Head in Next.js.',
+  description: 'Devops',
+  date: '6 July 2021',
+  readTime: 2
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+## Adding a Script to the Head in Next.js.
+
+```js
+import Head from "next/head";
+
+// Add this wherever you render your code...
+<Head>
+    <script dangerouslySetInnerHTML={{ __html: `YOUR SCRIPT CODE GOES HERE` }} />
+</Head>
+```
+
+## Try use Script in Next.js.
+```js
+import Script from 'next/script';
+
+function Home() {
+  return (
+    <>
+      {/* First */}
+      <Script src="https://www.google-analytics.com/analytics.js" />
+
+      {/* Second */}
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `document.getElementById('banner').removeClass('hidden')`
+        }}
+      />
+
+      {/* Third */}
+      <Script strategy="lazyOnload">
+        {`document.getElementById('banner').removeClass('hidden')`}
+      </Script>
+    </>
+  )
+}
+```
