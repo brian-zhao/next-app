@@ -13,11 +13,19 @@
   </url>
 
   <url>
-    <loc>https://brianzhao.xyz/blog/post-2/index</loc>
+    <loc>https://brianzhao.xyz/blog/create-sitemap-generator-nextjs/index</loc>
   </url>
 
   <url>
-    <loc>https://brianzhao.xyz/blog/post-1/index</loc>
+    <loc
+      >https://brianzhao.xyz/blog/google-cloud-shared-responsibility-model/index</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://brianzhao.xyz/blog/how-to-fix-ssh-too-many-authentication-failures/index</loc
+    >
   </url>
 
   <url>
@@ -29,15 +37,11 @@
   </url>
 
   <url>
-    <loc>https://brianzhao.xyz/dao/post-11/index</loc>
-  </url>
-
-  <url>
     <loc>https://brianzhao.xyz/dao/post-12/index</loc>
   </url>
 
   <url>
-    <loc>https://brianzhao.xyz/dao/post-13/index</loc>
+    <loc>https://brianzhao.xyz/dao/post-11/index</loc>
   </url>
 
   <url>
@@ -46,6 +50,10 @@
 
   <url>
     <loc>https://brianzhao.xyz/dao/post-15/index</loc>
+  </url>
+
+  <url>
+    <loc>https://brianzhao.xyz/dao/post-13/index</loc>
   </url>
 
   <url>
@@ -89,11 +97,19 @@
   </url>
 
   <url>
+    <loc>https://brianzhao.xyz/dao/post-25/index</loc>
+  </url>
+
+  <url>
     <loc>https://brianzhao.xyz/dao/post-26/index</loc>
   </url>
 
   <url>
-    <loc>https://brianzhao.xyz/dao/post-25/index</loc>
+    <loc>https://brianzhao.xyz/dao/post-27/index</loc>
+  </url>
+
+  <url>
+    <loc>https://brianzhao.xyz/dao/post-28/index</loc>
   </url>
 
   <url>

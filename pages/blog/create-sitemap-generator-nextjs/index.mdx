@@ -1,0 +1,95 @@
+import BlogPost from '../../../components/BlogPost'
+import Image from 'next/image'
+
+export const meta = {
+  title: 'Creating a sitemap generator for Next.js',
+  description: 'From sitemap creation to search engine index request',
+  date: '26 May 2021',
+  readTime: 2
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+## Dynamic Sitemaps
+
+```js
+$ yarn add --dev globby
+```
+
+Create `scripts/generate-sitemap.js` and this will build sitemap in `/pages`.
+Change `https://yoursitehere.com` with your own website.
+
+```js render=true
+const fs = require('fs');
+
+const globby = require('globby');
+const prettier = require('prettier');
+
+(async () => {
+  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
+
+  // Ignore Next.js specific files (e.g., _app.js) and API routes.
+  const pages = await globby([
+    'pages/**/*{.js,.mdx}',
+    '!pages/_*.js',
+    '!pages/api'
+  ]);
+  const sitemap = `
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            ${pages
+              .map((page) => {
+                const path = page
+                  .replace('pages', '')
+                  .replace('.js', '')
+                  .replace('.mdx', '');
+                const route = path === '/index' ? '' : path;
+
+                return `
+                        <url>
+                            <loc>${`https://yoursitehere.com${route}`}</loc>
+                        </url>
+                    `;
+              })
+              .join('')}
+        </urlset>
+    `;
+
+  // If you're not using Prettier, you can remove this.
+  const formatted = prettier.format(sitemap, {
+    ...prettierConfig,
+    parser: 'html'
+  });
+
+  fs.writeFileSync('public/sitemap.xml', formatted);
+})();
+```
+
+In `next.config.js` add follow snippet.
+```js render=true
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/
+});
+
+module.exports = withMDX({
+  pageExtensions: ["js", "jsx", "md", "mdx"],
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/generate-sitemap');
+    }
+
+    return config;
+  }
+});
+```
+
+## robots.txt
+
+Add `public/robots.txt` for the sitemap to be crawled.
+
+```js
+User-agent: *
+Sitemap: https://yoursitehere.com/sitemap.xml
+```
+
+Done!
